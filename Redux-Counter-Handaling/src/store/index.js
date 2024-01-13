@@ -9,6 +9,9 @@ let counterstore=(store=INISTAL_VALUE,action)=>{
     else if(action.type==="Decrement"){
     return {counter: store.counter-1}
     }
+    else if(action.type==="Add"){
+      return{counter:store.counter + Number(action.payload.num)}
+    }
     return store;
 }
 let reducestore=createStore(counterstore);
